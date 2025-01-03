@@ -1,0 +1,791 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content>
+    <meta name="keywords" content>
+
+    <title> MRE </title>
+    <link rel="icon" type="image/x-icon" href="../static/img/logo/logo3.png">
+
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/all-fontawesome.min.css">
+    <link rel="stylesheet" href="../static/css/flaticon.css">
+    <link rel="stylesheet" href="../static/css/animate.min.css">
+    <link rel="stylesheet" href="../static/css/magnific-popup.min.css">
+    <link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../static/css/nice-select.min.css">
+    <link rel="stylesheet" href="../static/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../static/css/jquery.timepicker.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+    <div class="preloader">
+        <div class="loader">
+            <span style="--i:1;"></span>
+            <span style="--i:2;"></span>
+            <span style="--i:3;"></span>
+            <span style="--i:4;"></span>
+            <span style="--i:5;"></span>
+            <span style="--i:6;"></span>
+            <span style="--i:7;"></span>
+            <span style="--i:8;"></span>
+            <span style="--i:9;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <div class="loader-plane"></div>
+        </div>
+    </div>
+    
+    
+    <header class="header">
+    
+        <div class="header-top">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-7">
+                        <div class="header-top-left">
+                            <div class="top-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <div class="top-contact-info">
+                                <ul>
+                                    <li><a href="tel:+21234567897"><i class="far fa-phone-arrow-down-left"></i>0912987654</a></li>
+                                    <li><a href="/cdn-cgi/l/email-protection#afc6c1c9c0efcad7cec2dfc3ca81ccc0c2"><i class="far fa-envelopes"></i><span class="__cf_email__" data-cfemail="21484f474e614459404c514d440f424e4c">[ایمیل&#160;محفوظ]</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="header-top-right">
+                            <div class="lang">
+                                <select name="lang" class="select">
+                                    <option value="1">ایران</option>
+                                <option value="2">روس</option>
+                                <option value="3">روم</option>
+                                <option value="4">فرانس</option>
+                                <option value="5">اسپین</option>
+                                <option value="6">پرتقال</option>
+                                </select>
+                            </div>
+                            <div class="currency">
+                                <select name="currency" class="select">
+                                    <option value="1">تومان</option>
+                            <option value="2">یورو</option>
+                            <option value="3">ریال</option>
+                            <option value="4">ین</option>
+                            <option value="5">پوند</option>
+                            <option value="6">فرانک</option>
+                                </select>
+                            </div>
+                            <div class="account">
+                            {% if session["user_id"] %}
+                                <form action="/profile" method="get">
+                                    <a href="/profile"><i class="far fa-user-tie"></i>پروفایل</a>
+                                </form>
+                                <form action="/logout" method="post">
+                                    <a href="/logout"><i class="far fa-sign-in"></i>خروج</a>
+                                </form>
+                            {% else %}
+                                <form action="/login" method="get">
+                                    <a href="/login"><i class="far fa-sign-in"></i>وارد شدن</a>
+                                </form>
+                                <form action="/signup" method="get">
+                                    <a href="/signup"><i class="far fa-user-tie"></i>ثبت نام</a>
+                                </form>
+                            {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-navigation">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+							<img
+								src="../static/img/logo/logo4.png"
+								class="logo-display"
+								alt="logo" />
+							<img
+								src="../static/img/logo/logo2.png"
+								class="logo-scrolled"
+								alt="logo" />
+                    </a>
+                    <div class="mobile-menu-right">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-btn-icon"><i class="far fa-bars"></i></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/">صفحه اصلی</a>
+    
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">پرواز</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="/flightgrid">شبکه پرواز</a></li>
+                                    <li><a class="dropdown-item" href="/flightlist">لیست پرواز</a></li>
+                                    <li><a class="dropdown-item" href="/flightfullwidth">پرواز با عرض کامل</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/flightsingle">اطلاعات پرواز</a></li>
+                                    <li><a class="dropdown-item" href="/flightbooking">رزرو پرواز</a></li>
+                                    <li><a class="dropdown-item" href="/flightsearchresult">نتیجه جستجوی پرواز</a></li>
+                                    <li><a class="dropdown-item" href="/flightadd">پرواز را اضافه کنید</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">هتل</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="/hotelgrid">گرید هتل</a></li>
+                                    <li><a class="dropdown-item" href="/hotelfullwidth">هتل با عرض کامل</a></li>
+                                    <li class="dropdown-submenu">
+                                        <a class="dropdown-item dropdown-toggle" href="#">اتاق هتل</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="/hotelroomgrid">شبکه اتاق</a></li>
+                                            <li><a class="dropdown-item" href="/hotelroomlist">فهرست اتاق</a></li>
+                                            <li><a class="dropdown-item" href="/hotelroomfullwidth">عرض کامل اتاق</a></li>
+                                            <li><a class="dropdown-item" href="/hotelroomsingle">جزئیات اتاق</a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="/hotelroomsearchresult">نتیجه جستجوی اتاق</a></li>
+                                            <li><a class="dropdown-item" href="/hotelroomadd">اضافه کردن اتاق</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/hotelsingle">جزئیات هتل</a></li>
+        <li><a class="dropdown-item" href="/hotelbooking">رزرو هتل</a></li>
+        <li><a class="dropdown-item" href="/hotelsearchresult">نتیجه جستجوی هتل</a>
+        </li>
+        <li><a class="dropdown-item" href="/hoteladd">اضافه کردن هتل</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">صفحات</a>
+                                <div class="dropdown-menu mega-menu fade-down">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="/destination">مقصد</a></li>
+        <li><a class="dropdown-item" href="/career">حرفه</a></li>
+        <li><a class="dropdown-item" href="/careersingle">جزئیات شغلی</a></li>
+        <li><a class="dropdown-item" href="/becomeexpert">تبدیل به یک متخصص</a></li>
+        <li><a class="dropdown-item" href="/cart">سبد خرید من</a></li>
+        <li><a class="dropdown-item" href="/checkout">پرداخت</a></li>
+        <li><a class="dropdown-item" href="/bookingconfirm">تایید رزرو</a></li>
+        <li><a class="dropdown-item" href="/login">وارد شدن</a></li>
+        <li><a class="dropdown-item" href="/signup">ثبت نام</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="/forgotpassword">فراموشی رمز عبور</a></li>
+        <li><a class="dropdown-item" href="/dashboard">داشبورد</a></li>
+        <li><a class="dropdown-item" href="/profile">پروفایل من</a></li>
+        <li><a class="dropdown-item" href="/profilelisting">فهرست من</a></li>
+        <li><a class="dropdown-item" href="/profilebooking">رزرو من</a></li>
+        <li><a class="dropdown-item" href="/profilebookinghistory">تاریخچه رزرو من</a></li>
+        <li><a class="dropdown-item" href="/profilewishlist"> علاقه مندی های من</a></li>
+        <li><a class="dropdown-item" href="/profilewallet">کیف پول من</a></li>
+        <li><a class="dropdown-item" href="/profilemessage">پیام ها</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="/profilenotification">اطلاعیه</a></li>
+                                                <li><a class="dropdown-item" href="/profilesetting">تنظیمات</a></li>
+                                                <li><a class="dropdown-item" href="/about">درباره ما</a></li>
+                                                <li><a class="dropdown-item" href="/pricing">طرح قیمت گذاری</a></li>
+                                                <li><a class="dropdown-item" href="/team">تیم ما</a></li>
+                                                <li><a class="dropdown-item" href="/service">خدمات</a></li>
+                                                <li><a class="dropdown-item" href="/servicesingle">سرویس تک</a></li>
+                                                <li><a class="dropdown-item" href="/gallery">آلبوم عکس</a></li>
+                                                <li><a class="dropdown-item" href="/contact">با ما تماس بگیرید</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <ul>
+                                                <li><a class="dropdown-item" href="/blog">وبلاگ</a></li>
+                                                <li><a class="dropdown-item" href="/blogsingle">سینگل وبلاگ</a></li>
+                                                <li><a class="dropdown-item" href="/faq">سوالات متداول</a></li>
+                                                <li><a class="dropdown-item" href="/testimonial">گواهینامه ها</a></li>
+                                                <li><a class="dropdown-item" href="/404">خطای 404</a></li>
+                                                <li><a class="dropdown-item" href="/coming-soon">به زودی</a></li>
+                                                <li><a class="dropdown-item" href="/terms">شرایط استفاده از خدمات</a></li>
+                                                <li><a class="dropdown-item" href="/privacy">حفظ حریم خصوصی</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">فعالیت</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="/activitygrid">شبکه فعالیت</a></li>
+                                    <li><a class="dropdown-item" href="/activitylist">لیست فعالیت</a></li>
+                                    <li><a class="dropdown-item" href="/activityfullwidth">فعالیت با عرض کامل</a></li>
+                                    <li><a class="dropdown-item" href="/activitysingle">جزئیات فعالیت</a></li>
+                                    <li><a class="dropdown-item" href="/activitybooking">رزرو فعالیت</a></li>
+                                    <li><a class="dropdown-item" href="/activitysearchresult">نتیجه جستجوی فعالیت</a></li>
+                                    <li><a class="dropdown-item" href="/activityadd">افزودن فعالیت</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">ماشین</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="/cargrid">شبکه ماشین</a></li>
+                                    <li><a class="dropdown-item" href="/carlist">لیست ماشین</a></li>
+                                    <li><a class="dropdown-item" href="/carfullwidth">عرض کامل ماشین</a></li>
+                                    <li><a class="dropdown-item" href="/carsingle">جزئیات خودرو</a></li>
+                                    <li><a class="dropdown-item" href="/carbooking">رزرو خودرو</a></li>
+                                    <li><a class="dropdown-item" href="/carsearchresult">نتیجه جستجوی خودرو</a></li>
+                                    <li><a class="dropdown-item" href="/caradd">ماشین را اضافه کنید</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">کشتی تفریحی</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="/cruisegrid">شبکه کروز</a></li>
+                                    <li><a class="dropdown-item" href="/cruiselist">لیست کروز</a></li>
+                                    <li><a class="dropdown-item" href="/cruisefullwidth">کروز با عرض کامل</a></li>
+                                    <li><a class="dropdown-item" href="/cruisesingle">جزئیات کروز</a></li>
+                                    <li><a class="dropdown-item" href="/cruisebooking">رزرو کروز</a></li>
+                                    <li><a class="dropdown-item" href="/cruisesearchresult">نتیجه جستجوی کروز</a></li>
+                                    <li><a class="dropdown-item" href="/cruiseadd">کروز را اضافه کنید</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">تور</a>
+                                <ul class="dropdown-menu fade-down">
+                                    <li><a class="dropdown-item" href="/tourgrid">تور گرید</a></li>
+                                    <li><a class="dropdown-item" href="/tourlist">لیست تور</a></li>
+                                    <li><a class="dropdown-item" href="/tourfullwidth">تور با عرض کامل</a></li>
+                                    <li><a class="dropdown-item" href="/toursingle">جزئیات تور</a></li>
+                                    <li><a class="dropdown-item" href="/tourbooking">رزرو تور</a></li>
+                                    <li><a class="dropdown-item" href="/toursearchresult">نتیجه جستجوی تور</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="/touradd">اضافه کردن تور</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="/contact">تماس باما</a></li>
+                        </ul>
+                       <div class="header-nav-right">
+                            <div class="header-btn">
+                                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                               <!-- <a href="add-property.html" class="theme-btn mt-2">یک متخصص شوید</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+<main class="main">
+
+    <div class="site-breadcrumb" style="background: url(../static/img/breadcrumb/01.jpg)">
+        <div class="container">
+            <h2 class="breadcrumb-title">رزرو پرواز</h2>
+            <ul class="breadcrumb-menu">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li class="active">رزرو پرواز</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="flight-booking py-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="booking-widget">
+                        <h4 class="booking-widget-title">رزرو اطلاعات شخصی</h4>
+                        <div class="booking-form">
+                            <form action="#">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>نام کوچک</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="نام کوچک">
+                                                <i class="far fa-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>نام خانوادگی</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="نام خانوادگی">
+                                                <i class="far fa-user"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>ایمیل</label>
+                                            <div class="form-group-icon">
+                                                <input type="email" class="form-control" placeholder="ادرس ایمیل شما">
+                                                <i class="far fa-envelopes"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>تلفن</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="شماره تلفن">
+                                                <i class="far fa-phone"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>آدرس 1</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="خط آدرس">
+                                                <i class="far fa-map-location-dot"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>آدرس 2</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="خط آدرس">
+                                                <i class="far fa-map-location-dot"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>کشور</label>
+                                            <div class="form-group-icon">
+                                                <select class="select">
+                                                    <option value>کشور را انتخاب کنید</option>
+                                                     <option value="1">استرالیا</option>
+                                                     <option value="2">برزیل</option>
+                                                     <option value="3">کانادا</option>
+                                                     <option value="4">بریتانیا</option>
+                                                     <option value="5">ایالات متحده</option>
+                                                </select>
+                                                <i class="far fa-globe"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>سن و سال</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="سن و سال">
+                                                <i class="fab fa-pagelines"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>شهر</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="شهر">
+                                                <i class="far fa-location-dot"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>موقعیت</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="موقعیت">
+                                                <i class="far fa-location-dot"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label>کد پستی</label>
+                                            <div class="form-group-icon">
+                                                <input type="text" class="form-control" placeholder="کد پستی">
+                                                <i class="far fa-location-dot"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <label>اطلاعات اضافی</label>
+                                            <div class="form-group-icon">
+                                                <textarea class="form-control" cols="30" rows="5" placeholder="نظر اضافی"></textarea>
+                                                <i class="far fa-pen"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="booking-widget">
+                        <h4 class="booking-widget-title">اطلاعات کارت شما</h4>
+                        <div class="booking-payment-area">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="pills-tab-1" data-bs-toggle="pill" data-bs-target="#pills-1" type="button" role="tab" aria-controls="pills-1" aria-selected="true">
+                                        <div class="payment-card-img">
+                                            <img src="../static/img/payment/mastercard.svg" alt>
+                                            <img src="../static/img/payment/visa.svg" alt>
+                                            <img src="../static/img/payment/american-express.svg" alt>
+                                            <img src="../static/img/payment/discover.svg" alt>
+                                        </div>
+                                        <span>پرداخت با کارت اعتباری</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-tab-2" data-bs-toggle="pill" data-bs-target="#pills-2" type="button" role="tab" aria-controls="pills-2" aria-selected="false">
+                                        <div class="booking-payment-img">
+                                            <img src="../static/img/payment/paypal-2.svg" alt>
+                                        </div>
+                                        <span>پرداخت از طریق پی پال</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-tab-3" data-bs-toggle="pill" data-bs-target="#pills-3" type="button" role="tab" aria-controls="pills-3" aria-selected="false">
+                                        <div class="booking-payment-img">
+                                            <img src="../static/img/payment/payoneer.svg" alt>
+                                        </div>
+                                        <span>پرداخت از طریق پایوونر</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-1" role="tabpanel" aria-labelledby="pills-tab-1" tabindex="0">
+                                    <div class="booking-form">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>نام دارنده کارت</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="text" class="form-control" placeholder="نام روی کارت">
+                                                            <i class="far fa-user"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>شماره کارت</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="text" class="form-control" placeholder="شماره کارت شما">
+                                                            <i class="far fa-credit-card"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>تاریخ انقضا</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="text" class="form-control" placeholder="انقضا">
+                                                            <i class="far fa-calendar-days"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>CCV</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="text" class="form-control" placeholder="CVV">
+                                                            <i class="far fa-credit-card"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group mt-2">
+                                                        <button type="submit" class="theme-btn">رزرو را تایید کنید<i class="far fa-arrow-left"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-2" role="tabpanel" aria-labelledby="pills-tab-2" tabindex="0">
+                                    <div class="booking-form">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>آدرس ایمیل</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="text" class="form-control" placeholder="ایمیل">
+                                                            <i class="far fa-envelopes"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>رمز عبور</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="password" class="form-control" placeholder="رمز عبور">
+                                                            <i class="far fa-lock"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group mt-2">
+                                                        <button type="submit" class="theme-btn">وارد شدن به حساب<i class="far fa-arrow-left"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="pills-3" role="tabpanel" aria-labelledby="pills-tab-3" tabindex="0">
+                                    <div class="booking-form">
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>آدرس ایمیل</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="text" class="form-control" placeholder="ایمیل">
+                                                            <i class="far fa-envelopes"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group">
+                                                        <label>رمز عبور</label>
+                                                        <div class="form-group-icon">
+                                                            <input type="password" class="form-control" placeholder="رمز عبور">
+                                                            <i class="far fa-lock"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="form-group mt-2">
+                                                        <button type="submit" class="theme-btn">وارد شدن به حساب<i class="far fa-arrow-left"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="booking-summary">
+                        <h4 class="mb-30">خلاصه رزرو</h4>
+                        <div class="booking-property-img">
+                            <img src="../static/img/flight/07.jpg" alt>
+                        </div>
+                        <div class="booking-property-content">
+                            <div class="booking-property-title">
+                                <div>
+                                    <h5>نیویورک - لس آنجلس</h5>
+                                    <p>پرواز یک طرفه</p>
+                                </div>
+                                <a href="#" class="book-edit-btn"><i class="far fa-pen"></i></a>
+                            </div>
+                            <div class="booking-property-rate">
+                                <span class="badge"><i class="far fa-star"></i> 4.5/5</span>
+                                <span class="rate-type">میانگین</span>
+                                <span class="rate-text">(35 نقد و بررسی)</span>
+                            </div>
+                        </div>
+                        <div class="booking-info-summary">
+                            <h5>اطلاعات سفارش</h5>
+                            <ul>
+                                <li>برخاستن: <span>نیویورک</span></li>
+                                <li>فرود: <span>لس آنجلس</span></li>
+                                <li>تاریخ سفر: <span>20 دی 1402 ساعت 10:10 صبح</span></li>
+                                <li>خط هوایی: <span>دلتا</span></li>
+                                <li>نوع پرواز: <span>یک طرفه</span></li>
+                                <li>کلاس پرواز: <span>اقتصادی</span></li>
+                                <li>مدت پرواز: <span>4 ساعت 05 دقیقه</span></li>
+                                <li>ایست پرواز: <span>بدون توقف</span></li>
+                                <li>بزرگسالان: <span>4</span></li>
+                                <li>کودکان: <span>2</span></li>
+                            </ul>
+                        </div>
+                        <div class="booking-order-info">
+                            <div class="booking-pay-info">
+                                <h5>پرداخت رزرو</h5>
+                                <ul>
+                                    <li>مجموع فرعی: <span>50 هزارتومان</span></li>
+                                    <li>تخفیف: <span>60 تومان</span></li>
+                                    <li>مالیات: <span>56 تومان</span></li>
+                                    <li class="order-total">شما پرداخت می کنید: <span>51 هزارتومان</span></li>
+                                </ul>
+                            </div>
+                            <div class="text-end mt-40">
+                                <a href="#" class="theme-btn d-block">رزرو را تایید کنید<i class="far fa-arrow-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="footer-area">
+    <div class="footer-widget">
+        <div class="container">
+            <div class="row footer-widget-wrapper pt-100 pb-70">
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-widget-box about-us">
+                        <a href="#" class="footer-logo">
+                            <img src="../static/img/logo/logo2.png" alt>
+                        </a>
+                        <p class="mb-4">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه ها و مجلات هستند.</p>
+                        <ul class="footer-contact">
+                            <li>
+                                <div class="footer-call">
+                                    <div class="footer-call-icon">
+                                        <i class="fal fa-headset"></i>
+                                    </div>
+                                    <div class="footer-call-info">
+                                        <h6>24/7 تماس با خدمات</h6>
+                                        <a href="tel:+21236547898">0912987654</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><i class="far fa-map-marker-alt"></i>تهران میدان آزادی ، خیابان گل ها</li>
+                            <li><a href="/cdn-cgi/l/email-protection#2a43444c456a4f524b475a464f04494547"><i class="far fa-envelopes"></i><span class="__cf_email__" data-cfemail="e881868e87a88d90898598848dc68b8785">[ایمیل محافظت شده است]</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">شرکت ما</h4>
+                        <ul class="footer-list">
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> درباره ما</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> با تیم ما آشنا شوید</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> با ما تماس بگیرید</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> برنامه های وابسته</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> تبلیغات با ما</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> مشاغل</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> وبلاگ ما</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">سایر خدمات</h4>
+                        <ul class="footer-list">
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> پاداش برنامه</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> شرکا</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> برنامه جامعه</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> روابط سرمایه گذار</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> راهنمای توسعه دهنده</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> سفر ای پی ای</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> امتیاز پلاس</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">مرکز راهنمایی</h4>
+                        <ul class="footer-list">
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> حساب</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> سوالات متداول</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> اطلاع قانونی</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i>حفظ حریم خصوصی</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> شرایط و ضوابط</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> چت زنده</a></li>
+                            <li><a href="#"><i class="fas fa-angle-double-right"></i> نقشه سایت</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="footer-widget-box list">
+                        <h4 class="footer-widget-title">خبرنامه</h4>
+                        <div class="footer-newsletter">
+                            <p>برای دریافت آخرین به روز رسانی و اخبار، در خبرنامه ما مشترک شوید</p>
+                            <div class="subscribe-form">
+                                <form action="#">
+                                    <div class="form-group">
+                                        <div class="form-group-icon">
+                                            <input type="email" class="form-control" placeholder="ایمیل خود را وارد کنید">
+                                            <i class="far fa-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <button class="theme-btn" type="submit">
+                                        مشترک شوید <i class="far fa-paper-plane"></i>
+                                    </button>
+                                    <p><i class="far fa-lock"></i> اطلاعات شما نزد ما محفوظ می ماند.</p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer-payment-method">
+                            <h6> میپذیریم:</h6>
+                            <div class="payment-method-img">
+                                <img src="../static/img/payment/paypal.svg" alt>
+                                <img src="../static/img/payment/mastercard.svg" alt>
+                                <img src="../static/img/payment/visa.svg" alt>
+                                <img src="../static/img/payment/discover.svg" alt>
+                                <img src="../static/img/payment/american-express.svg" alt>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 align-self-center">
+                    <p class="copyright-text">کپی رایت <span id="date"></span> <a href="#"> مای تریپ </a> تمامی حقوق محفوظ است.</p>
+                </div>
+                <div class="col-md-6 align-self-center">
+                    <ul class="footer-social">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<a href="#" id="scroll-top"><i class="far fa-angle-up"></i></a>
+
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../static/js/jquery-3.6.0.min.js"></script>
+<script src="../static/js/modernizr.min.js"></script>
+<script src="../static/js/bootstrap.bundle.min.js"></script>
+<script src="../static/js/imagesloaded.pkgd.min.js"></script>
+<script src="../static/js/jquery.magnific-popup.min.js"></script>
+<script src="../static/js/isotope.pkgd.min.js"></script>
+<script src="../static/js/jquery.appear.min.js"></script>
+<script src="../static/js/jquery.easing.min.js"></script>
+<script src="../static/js/owl.carousel.min.js"></script>
+<script src="../static/js/counter-up.js"></script>
+<script src="../static/js/masonry.pkgd.min.js"></script>
+<script src="../static/js/jquery.nice-select.min.js"></script>
+<script src="../static/js/jquery-ui.min.js"></script>
+<script src="../static/js/jquery.timepicker.min.js"></script>
+<script src="../static/js/wow.min.js"></script>
+<script src="../static/js/main.js"></script>
+</body>
+</html>
